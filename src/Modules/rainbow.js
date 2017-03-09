@@ -3,15 +3,14 @@ import React, { Component } from 'react';
 export class Rainbow extends Component{
   constructor(){
     super();
-    this.state={imagenes=:{}}
   }
   render() {
     return (
       <div>
-        <input onChange></input>
+        {this.props.image}
       </div>
     );
   }
 }
 
-export default Busqueda;
+export default Rainbow;
