@@ -9,7 +9,7 @@ class App extends Component {
     return (
       <div>
         <h1> Flickr Rainbow </h1>
-        <p> Search for something on Flickr ande we will get you a Rainbow for it </p>
+        <p> Search for something on Flickr and we will get you a Rainbow for it </p>
         <Busqueda/>
       </div>
     );

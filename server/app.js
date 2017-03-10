@@ -21,7 +21,7 @@ function getApiKeys(callback, errorcallback) {
 				errorcallback(err);
 				return;
 			}
-			callback(api_key, api_secret);
+			callback(api_key.trim(), api_secret.trim());
 		});
 	});
 }
@@ -46,7 +46,7 @@ app.get('/flickr/:query', function (req, res) {
 		Flickr.tokenOnly(flickrOptions, function(error, flickr) {
 			console.log("tokenOnly");
 			if (error) {
-				res.send(error);
+				res.send(error)	;
 				return;
 			}
 		  // we can now use "flickr" as our API object,
@@ -58,7 +58,7 @@ app.get('/flickr/:query', function (req, res) {
 		  }, (err, data) => {
 		  	if (err) res.send(err);
 		  	console.log("Got flickr data sending it");
-		  	res.send(data);
+		  	res.send(JSON.stringify(data.photos));
 		  });
 		});
 
